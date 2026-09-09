@@ -96,7 +96,7 @@ export function Methodology() {
                   <div><strong className="text-emerald-100">Source:</strong> World Bank Open Data &amp; U.S. BLS</div>
                   <div><strong className="text-emerald-100">National Authority:</strong> U.S. Bureau of Labor Statistics (BLS)</div>
                   <div><strong className="text-emerald-100">Base Index:</strong> 2010 = 100</div>
-                  <div><strong className="text-emerald-100">Coverage:</strong> 1960 – 2024 (Annual)</div>
+                  <div><strong className="text-emerald-100">Coverage:</strong> 1960 – 2025 (Annual)</div>
                 </div>
               </div>
             </div>

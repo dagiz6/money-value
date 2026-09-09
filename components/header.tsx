@@ -17,7 +17,7 @@ export function Header() {
 
           <div>
             <div className="font-bold text-white text-base leading-tight tracking-tight">
-              MoneyValue
+              TrueWorth
             </div>
             <div className="text-[11px] text-emerald-200/50 font-normal tracking-normal">
               Inflation &amp; Purchasing Power

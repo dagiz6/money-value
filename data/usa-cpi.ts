@@ -25,7 +25,7 @@ export const usaCPIDataset: CountryCPIDataset = {
   frequency: 'Annual',
   lastUpdated: 'July 2026',
   minYear: 1960,
-  maxYear: 2024,
+  maxYear: 2025,
   data: [
     { year: 1960, cpi: 13.5631 },
     { year: 1961, cpi: 13.7083 },
@@ -92,5 +92,6 @@ export const usaCPIDataset: CountryCPIDataset = {
     { year: 2022, cpi: 134.2112 },
     { year: 2023, cpi: 139.7358 },
     { year: 2024, cpi: 143.8573 },
+    { year: 2025, cpi: 147.6479 },
   ],
 };

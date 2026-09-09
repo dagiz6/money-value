@@ -33,7 +33,7 @@ export function CurrencySelect({
       label: 'US Dollar',
       symbol: '$',
       flag: '🇺🇸',
-      sublabel: 'CPI: 1960 – 2024',
+      sublabel: 'CPI: 1960 – 2025',
     },
   ];
 

@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-emerald-900/40 bg-[#051412]/80 py-8 text-center text-xs text-emerald-200/50">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <span className="font-semibold text-white">MoneyValue</span> — Historical Purchasing Power &amp; Inflation Calculator
+          <span className="font-semibold text-white">TrueWorth</span> : Historical Purchasing Power &amp; Inflation Calculator
         </div>
         <div className="flex items-center gap-4 text-emerald-200/60">
           <a

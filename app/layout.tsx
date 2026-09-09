@@ -13,10 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'MoneyValue — Inflation & Purchasing Power Calculator',
+  title: 'TrueWorth - Inflation & Purchasing Power Calculator',
   description:
     'Calculate how the purchasing power of ETB and USD has changed over time using historical CPI data.',
   keywords: [
+    'trueworth',
+    'true worth',
     'inflation calculator',
     'purchasing power calculator',
     'Ethiopian Birr inflation',
@@ -25,9 +27,9 @@ export const metadata: Metadata = {
     'USD CPI',
     'historical money value',
   ],
-  authors: [{ name: 'MoneyValue' }],
+  authors: [{ name: 'TrueWorth' }],
   openGraph: {
-    title: 'MoneyValue — Inflation & Purchasing Power Calculator',
+    title: 'TrueWorth - Inflation & Purchasing Power Calculator',
     description:
       'Calculate how the purchasing power of ETB and USD has changed over time using authoritative CPI data.',
     type: 'website',

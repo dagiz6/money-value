@@ -148,11 +148,11 @@ describe('Dataset Integrity (Requirement 7 & 8)', () => {
     assert.equal(baseEntry?.cpi, 100);
   });
 
-  it('US dataset has authentic continuous data from 1960 to 2024', () => {
+  it('US dataset has authentic continuous data from 1960 to 2025', () => {
     const usa = getCPIDataset('USD');
     assert.equal(usa.minYear, 1960);
-    assert.equal(usa.maxYear, 2024);
-    assert.equal(usa.data.length, 65);
+    assert.equal(usa.maxYear, 2025);
+    assert.equal(usa.data.length, 66);
 
     // 2010 is base year = 100
     const baseEntry = usa.data.find(d => d.year === 2010);

@@ -22,7 +22,6 @@ export function AmountInput({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value;
-    // Allow numbers and a single decimal point
     if (/^[0-9]*\.?[0-9]*$/.test(raw)) {
       onChange(raw);
     }
@@ -33,19 +32,19 @@ export function AmountInput({
       <div className="flex items-center justify-between mb-2">
         <label
           htmlFor="amount-input"
-          className="block text-sm font-medium text-slate-700 dark:text-slate-300"
+          className="block text-sm font-medium text-emerald-100/90"
         >
           Initial Amount
         </label>
-        <span className="text-xs text-slate-500 dark:text-slate-400">
+        <span className="text-xs text-emerald-200/50">
           Positive number
         </span>
       </div>
 
-      <div className="relative rounded-lg shadow-xs">
+      <div className="relative rounded-xl shadow-xs">
         {isUSD && (
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5">
-            <span className="text-slate-500 dark:text-slate-400 font-medium text-base sm:text-lg">
+            <span className="text-emerald-400 font-semibold text-base sm:text-lg">
               $
             </span>
           </div>
@@ -62,18 +61,18 @@ export function AmountInput({
           placeholder="e.g. 10,000"
           aria-invalid={Boolean(error)}
           aria-describedby={error ? 'amount-error' : undefined}
-          className={`block w-full rounded-lg border bg-white dark:bg-slate-900 py-3 text-base sm:text-lg font-medium text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none transition-all ${
+          className={`block w-full rounded-xl border bg-[#061715] py-3 text-base sm:text-lg font-medium text-white placeholder:text-emerald-900/60 outline-none transition-all ${
             isUSD ? 'pl-8' : 'pl-3.5'
           } ${currency === 'ETB' ? 'pr-16' : 'pr-3.5'} ${
             error
-              ? 'border-rose-500 dark:border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20'
-              : 'border-slate-300 dark:border-slate-700 focus:border-teal-700 dark:focus:border-teal-400 focus:ring-2 focus:ring-teal-700/20 dark:focus:ring-teal-400/20'
+              ? 'border-rose-500 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/20'
+              : 'border-emerald-900/60 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20'
           } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
         />
 
         {currency === 'ETB' && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5">
-            <span className="text-slate-500 dark:text-slate-400 text-sm font-medium">
+            <span className="text-emerald-400/90 text-sm font-semibold">
               ETB
             </span>
           </div>
@@ -83,7 +82,7 @@ export function AmountInput({
       {error && (
         <p
           id="amount-error"
-          className="mt-1.5 text-xs text-rose-600 dark:text-rose-400 flex items-center gap-1"
+          className="mt-1.5 text-xs text-rose-400 flex items-center gap-1"
           role="alert"
         >
           <svg

@@ -1,13 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-}
-
-.dark {
-  --background: #090d10;
+  --background: #061513;
   --foreground: #f1f5f9;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -19,17 +15,37 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #061513;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: #061513;
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -8%, #133c35 0%, #09221e 50%, #051412 100%);
+  background-attachment: fixed;
+  color: #f1f5f9;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 /* Tabular figures for numeric precision */
 .tabular-nums {
   font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbar matching dark emerald aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #061513;
+}
+::-webkit-scrollbar-thumb {
+  background: #113c35;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #195249;
 }

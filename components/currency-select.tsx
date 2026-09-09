@@ -41,7 +41,7 @@ export function CurrencySelect({
     <div className="w-full">
       <label
         id="currency-select-label"
-        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+        className="block text-sm font-medium text-emerald-100/90 mb-2"
       >
         Currency
       </label>
@@ -60,10 +60,10 @@ export function CurrencySelect({
               aria-checked={isSelected}
               disabled={disabled}
               onClick={() => onChange(curr.code)}
-              className={`flex items-center justify-between p-3.5 rounded-lg border text-left transition-all outline-none focus-visible:ring-2 focus-visible:ring-teal-600 dark:focus-visible:ring-teal-400 ${
+              className={`flex items-center justify-between p-3.5 rounded-xl border text-left transition-all outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                 isSelected
-                  ? 'border-teal-700 dark:border-teal-500 bg-teal-50/60 dark:bg-teal-950/30 ring-1 ring-teal-700 dark:ring-teal-500'
-                  : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-slate-300 dark:hover:border-slate-700 text-slate-600 dark:text-slate-400'
+                  ? 'border-emerald-500/80 bg-emerald-950/60 text-white ring-1 ring-emerald-500/50 shadow-md shadow-emerald-950/40'
+                  : 'border-emerald-900/40 bg-[#061715]/70 hover:border-emerald-800 text-slate-300'
               } ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
             >
               <div className="flex items-center gap-2.5">
@@ -72,20 +72,14 @@ export function CurrencySelect({
                 </span>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <span
-                      className={`text-base font-semibold ${
-                        isSelected
-                          ? 'text-slate-900 dark:text-slate-100'
-                          : 'text-slate-700 dark:text-slate-300'
-                      }`}
-                    >
+                    <span className="text-base font-semibold text-white">
                       {curr.code}
                     </span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400">
+                    <span className="text-xs text-emerald-200/50">
                       ({curr.symbol})
                     </span>
                   </div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400">
+                  <div className="text-xs text-emerald-200/50">
                     {curr.sublabel}
                   </div>
                 </div>
@@ -93,13 +87,13 @@ export function CurrencySelect({
               <div
                 className={`w-4 h-4 rounded-full border flex items-center justify-center ${
                   isSelected
-                    ? 'border-teal-700 dark:border-teal-400 bg-teal-700 dark:bg-teal-400'
-                    : 'border-slate-300 dark:border-slate-600'
+                    ? 'border-emerald-400 bg-emerald-400'
+                    : 'border-emerald-800'
                 }`}
                 aria-hidden="true"
               >
                 {isSelected && (
-                  <div className="w-1.5 h-1.5 rounded-full bg-white dark:bg-slate-900" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#061513]" />
                 )}
               </div>
             </button>

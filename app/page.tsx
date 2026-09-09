@@ -9,24 +9,36 @@ export default function Home() {
     <div className="min-h-screen flex flex-col justify-between">
       <Header />
 
-      <main id="main-content" className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 space-y-12">
-        {/* Hero Section */}
-        <section className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-100/70 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200/50 dark:border-teal-800/50 mb-1">
-            <span>Verified CPI Datasets</span>
-            <span>•</span>
-            <span>1960 – 2025</span>
+      <main id="main-content" className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-12 space-y-12">
+        {/* Hero Section matching provided screenshot */}
+        <section className="text-center max-w-3xl mx-auto space-y-5 pt-4">
+          {/* Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] font-semibold tracking-wider text-emerald-200/90 bg-emerald-950/60 border border-emerald-700/40 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+            <span>VERIFIED CPI DATASETS · 1960 – 2025</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50">
-            What was your money <span className="text-teal-800 dark:text-teal-400">really worth?</span>
+          {/* Heading */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
+            What was your money
+            <span className="block mt-1 bg-gradient-to-r from-emerald-300 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
+              really worth?
+            </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Estimate how inflation and consumer price changes have impacted the purchasing power of{' '}
-            <strong className="font-semibold text-slate-800 dark:text-slate-200">Ethiopian Birr (ETB)</strong> and{' '}
-            <strong className="font-semibold text-slate-800 dark:text-slate-200">US Dollars (USD)</strong> across historical eras.
+          {/* Subtitle */}
+          <p className="text-sm sm:text-base text-emerald-100/70 max-w-xl mx-auto leading-relaxed">
+            Measure how inflation eroded the purchasing power of{' '}
+            <strong className="font-semibold text-white">Ethiopian Birr</strong> and{' '}
+            <strong className="font-semibold text-white">US Dollars</strong> across decades of history.
           </p>
+
+          {/* Centered Decorative Range Indicator */}
+          <div className="flex items-center justify-center gap-4 pt-1 text-[11px] tracking-widest text-emerald-400/50 uppercase font-medium">
+            <span className="h-px w-16 sm:w-28 bg-gradient-to-r from-transparent to-emerald-800/60" />
+            <span>ETB • USD • 1960 – 2025</span>
+            <span className="h-px w-16 sm:w-28 bg-gradient-to-l from-transparent to-emerald-800/60" />
+          </div>
         </section>
 
         {/* Primary Interactive Calculator */}

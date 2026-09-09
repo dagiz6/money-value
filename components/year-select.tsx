@@ -28,7 +28,7 @@ export function YearSelect({
         <div>
           <label
             htmlFor="from-year-select"
-            className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            className="block text-sm font-medium text-emerald-100/90 mb-2"
           >
             Starting Year (From)
           </label>
@@ -40,15 +40,15 @@ export function YearSelect({
               disabled={disabled}
               onChange={(e) => onFromYearChange(Number(e.target.value))}
               aria-describedby={error ? 'year-range-error' : undefined}
-              className="block w-full appearance-none rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 py-3 pl-3.5 pr-10 text-base font-medium text-slate-900 dark:text-slate-100 outline-none transition-all focus:border-teal-700 dark:focus:border-teal-400 focus:ring-2 focus:ring-teal-700/20 dark:focus:ring-teal-400/20 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              className="block w-full appearance-none rounded-xl border border-emerald-900/60 bg-[#061715] py-3 pl-3.5 pr-10 text-base font-medium text-white outline-none transition-all focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               {availableYears.map((year) => (
-                <option key={`from-${year}`} value={year}>
+                <option key={`from-${year}`} value={year} className="bg-[#081f1c] text-white">
                   {year}
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-emerald-400">
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -71,7 +71,7 @@ export function YearSelect({
         <div>
           <label
             htmlFor="to-year-select"
-            className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            className="block text-sm font-medium text-emerald-100/90 mb-2"
           >
             Target Year (To)
           </label>
@@ -83,15 +83,15 @@ export function YearSelect({
               disabled={disabled}
               onChange={(e) => onToYearChange(Number(e.target.value))}
               aria-describedby={error ? 'year-range-error' : undefined}
-              className="block w-full appearance-none rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 py-3 pl-3.5 pr-10 text-base font-medium text-slate-900 dark:text-slate-100 outline-none transition-all focus:border-teal-700 dark:focus:border-teal-400 focus:ring-2 focus:ring-teal-700/20 dark:focus:ring-teal-400/20 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              className="block w-full appearance-none rounded-xl border border-emerald-900/60 bg-[#061715] py-3 pl-3.5 pr-10 text-base font-medium text-white outline-none transition-all focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               {availableYears.map((year) => (
-                <option key={`to-${year}`} value={year}>
+                <option key={`to-${year}`} value={year} className="bg-[#081f1c] text-white">
                   {year}
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-emerald-400">
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -114,7 +114,7 @@ export function YearSelect({
       {error && (
         <p
           id="year-range-error"
-          className="mt-2 text-xs text-rose-600 dark:text-rose-400 flex items-center gap-1"
+          className="mt-2 text-xs text-rose-400 flex items-center gap-1"
           role="alert"
         >
           <svg

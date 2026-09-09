@@ -4,16 +4,16 @@ import {
   calculateInflation,
   calculateForYears,
   getCPIDataset,
-} from '../lib/inflation.ts';
+} from '../lib/inflation';
 import {
   validateAmount,
   validateYears,
   validateCalculationForm,
-} from '../lib/validation.ts';
+} from '../lib/validation';
 import {
   formatCurrency,
   formatPercentage,
-} from '../lib/formatting.ts';
+} from '../lib/formatting';
 
 describe('Calculation Logic (Requirement 20)', () => {
   it('1. Same CPI: amount=10,000, startCPI=100, endCPI=100 -> adjusted=10,000, inflation=0%', () => {

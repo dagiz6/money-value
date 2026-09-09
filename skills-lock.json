@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "skills": {
+    "arcjet": {
+      "source": "arcjet/skills",
+      "sourceType": "github",
+      "skillPath": "arcjet/SKILL.md",
+      "computedHash": "aec83da796be3906db4172119779e0bda5c91d38eb51d0cf454184bf9ae5db4c"
+    },
+    "integrate-arcjet-guard-claude-agent-sdk-py": {
+      "source": "arcjet/skills",
+      "sourceType": "github",
+      "skillPath": "integrate-arcjet-guard-claude-agent-sdk-py/SKILL.md",
+      "computedHash": "52d93d07619e5bed736eb3314f8de30e02658a39cb920b8a4910f72f6fa59f0c"
+    },
+    "integrate-arcjet-guard-claude-managed-agents-py": {
+      "source": "arcjet/skills",
+      "sourceType": "github",
+      "skillPath": "integrate-arcjet-guard-claude-managed-agents-py/SKILL.md",
+      "computedHash": "71b353bdc408764f9a8d0b460d70dd0246831295c7566d778bec92b6aaad0fd2"
+    },
+    "integrate-arcjet-guard-crewai": {
+      "source": "arcjet/skills",
+      "sourceType": "github",
+      "skillPath": "integrate-arcjet-guard-crewai/SKILL.md",
+      "computedHash": "71adec657bfd5c97227961e64d0300acc13516997505eaefe5854eb0da1345b7"
+    },
+    "integrate-arcjet-guard-langchain-py": {
+      "source": "arcjet/skills",
+      "sourceType": "github",
+      "skillPath": "integrate-arcjet-guard-langchain-py/SKILL.md",
+      "computedHash": "7c7d94c4cf8a41973e9660e5967c2af92241df064caa9b208baea760d1691b56"
+    },
+    "integrate-arcjet-guard-openai-agents-py": {
+      "source": "arcjet/skills",
+      "sourceType": "github",
+      "skillPath": "integrate-arcjet-guard-openai-agents-py/SKILL.md",
+      "computedHash": "c49f31d6c879f0d09b65a5c1386a3bac6efff7addc8051c62959a57aef6f7ce7"
+    },
+    "integrate-arcjet-guard-strands-agents-py": {
+      "source": "arcjet/skills",
+      "sourceType": "github",
+      "skillPath": "integrate-arcjet-guard-strands-agents-py/SKILL.md",
+      "computedHash": "46d5881ed9cab49fa437bacbdf82bbf5806b5fe6c4f423956de751447e7e2856"
+    }
+  }
+}

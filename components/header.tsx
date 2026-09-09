@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export function Header() {
   return (
@@ -6,21 +7,21 @@ export function Header() {
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo and Brand */}
         <a href="#" className="flex items-center gap-3 group">
-          {/* Glowing Sphere Logo from screenshot */}
-          <div className="relative w-8 h-8 rounded-full flex items-center justify-center p-0.5 bg-gradient-to-br from-emerald-400 via-teal-500 to-emerald-800 shadow-[0_0_12px_rgba(16,185,129,0.35)] group-hover:shadow-[0_0_16px_rgba(16,185,129,0.5)] transition-all">
-            <div className="w-full h-full rounded-full bg-[#08221e] relative overflow-hidden flex items-center justify-center">
-              {/* Internal Sphere Glow and Arc */}
-              <div className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-emerald-300/40 blur-[2px]" />
-              <div className="w-4 h-4 rounded-full bg-gradient-to-tr from-teal-700 via-emerald-500 to-cyan-200 shadow-inner" />
-            </div>
-          </div>
+          <Image
+            src="/favicon.ico"
+            alt="TrueWorth Logo"
+            width={32}
+            height={32}
+            className="w-8 h-8 rounded-lg object-contain shadow-xs"
+            priority
+          />
 
           <div>
             <div className="font-bold text-white text-base leading-tight tracking-tight">
               TrueWorth
             </div>
             <div className="text-[11px] text-emerald-200/50 font-normal tracking-normal">
-              Inflation &amp; Purchasing Power
+              Inflation & Purchasing Power
             </div>
           </div>
         </a>

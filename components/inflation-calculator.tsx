@@ -33,6 +33,13 @@ export function InflationCalculator() {
   // Validation errors
   const [errors, setErrors] = useState<{ amount?: string; year?: string }>({});
 
+  // Arcjet Rate limit status feedback
+  const [rateLimitStatus, setRateLimitStatus] = useState<{
+    isLimited: boolean;
+    message?: string;
+    remaining?: number;
+  } | null>(null);
+
   // Calculation result
   const [result, setResult] = useState<InflationCalculationResult | null>(() => {
     try {
@@ -93,13 +100,52 @@ export function InflationCalculator() {
 
     setErrors({});
 
-    startTransition(() => {
+    startTransition(async () => {
       try {
-        const res = calculateForYears(validation.value!.amount, from, to, curr);
-        setResult(res);
+        const response = await fetch('/api/calculate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            amount: validation.value!.amount,
+            fromYear: from,
+            toYear: to,
+            currency: curr,
+          }),
+        });
+
+        if (response.status === 429) {
+          const data = await response.json().catch(() => ({}));
+          setRateLimitStatus({
+            isLimited: true,
+            message:
+              data.error ||
+              'Rate limit exceeded (Arcjet): 3 requests/minute limit reached. Please wait before submitting more calculations.',
+          });
+          setResult(null);
+          return;
+        }
+
+        if (!response.ok) {
+          throw new Error('Calculation request failed');
+        }
+
+        const data = await response.json();
+        setResult(data.data);
+        const remainingHeader = response.headers.get('x-ratelimit-remaining');
+        setRateLimitStatus({
+          isLimited: false,
+          remaining: remainingHeader ? Number(remainingHeader) : undefined,
+        });
       } catch (e: unknown) {
-        const msg = e instanceof Error ? e.message : 'Calculation error occurred.';
-        setErrors({ year: msg });
+        if (!rateLimitStatus?.isLimited) {
+          try {
+            const res = calculateForYears(validation.value!.amount, from, to, curr);
+            setResult(res);
+          } catch {
+            const msg = e instanceof Error ? e.message : 'Calculation error occurred.';
+            setErrors({ year: msg });
+          }
+        }
       }
     });
   };
@@ -144,10 +190,42 @@ export function InflationCalculator() {
             </div>
           </div>
 
-          <div className="self-start sm:self-center px-3 py-1 rounded-full text-xs font-medium bg-[#061917] text-emerald-300 border border-emerald-700/40 tabular-nums">
-            {currency}: {minYear} – {maxYear}
+          <div className="flex flex-wrap items-center gap-2 self-start sm:self-center">
+            <div className="px-3 py-1 rounded-full text-xs font-medium bg-[#061917] text-emerald-300 border border-emerald-700/40 tabular-nums">
+              {currency}: {minYear} – {maxYear}
+            </div>
+            <div
+              className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-950/60 text-emerald-400 border border-emerald-800/50 flex items-center gap-1.5 shadow-sm"
+              title="Protected with Arcjet Rate Limiting (3 req/min) & WAF Shield"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Arcjet Protected (3 req/min)
+            </div>
           </div>
         </div>
+
+        {/* Rate Limit Warning Banner */}
+        {rateLimitStatus?.isLimited && (
+          <div className="mb-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-300">
+            <svg
+              className="w-4 h-4 text-amber-400 shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+              />
+            </svg>
+            <div className="space-y-0.5">
+              <span className="font-semibold text-amber-300">Arcjet Rate Limit Reached:</span>
+              <p className="text-amber-200/80">{rateLimitStatus.message}</p>
+            </div>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} noValidate className="space-y-6">
           {/* Currency Selector */}

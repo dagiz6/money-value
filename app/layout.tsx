@@ -50,9 +50,39 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#061513] text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof window === 'undefined') return;
+                window.addEventListener('unhandledrejection', function(e) {
+                  var reason = e.reason;
+                  var str = (reason && (reason.stack || reason.message || '')) || '';
+                  if (str.indexOf('chrome-extension://') !== -1 || str.indexOf('M_ID') !== -1) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+                window.addEventListener('error', function(e) {
+                  var str = (e.filename || '') + (e.message || '');
+                  if (str.indexOf('chrome-extension://') !== -1 || str.indexOf('M_ID') !== -1) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-[#061513] text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950"
+      >
         {children}
       </body>
     </html>

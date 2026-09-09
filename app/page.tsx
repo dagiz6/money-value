@@ -9,8 +9,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col justify-between">
       <Header />
 
-      <main id="main-content" className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-12 space-y-12">
-        {/* Hero Section matching provided screenshot */}
+      <main id="main-content" className="flex-1 max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        {/* Hero Section */}
         <section className="text-center max-w-3xl mx-auto space-y-5 pt-4">
           {/* Pill Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] font-semibold tracking-wider text-emerald-200/90 bg-emerald-950/60 border border-emerald-700/40 shadow-xs">
@@ -41,10 +41,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Primary Interactive Calculator */}
+        {/* Primary Interactive Calculator (Wide on Large Screens) */}
         <InflationCalculator />
 
-        {/* Methodology & Authoritative Sourcing */}
+        {/* Methodology & Authoritative Sourcing (Wide on Large Screens) */}
         <Methodology />
       </main>
 

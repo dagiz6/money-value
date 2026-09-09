@@ -112,7 +112,7 @@ export function InflationCalculator() {
   const currentDataset = getCPIDataset(currency);
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-8">
       {/* Calculator Input Form - Matching Image Design */}
       <section className="rounded-2xl border border-emerald-800/40 bg-[#09201d]/90 backdrop-blur-xl p-6 sm:p-8 shadow-2xl transition-all">
         {/* Header inside card matching user screenshot */}

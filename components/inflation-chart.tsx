@@ -36,9 +36,9 @@ export function InflationChart({
   }
 
   // Chart dimensions and SVG viewbox
-  const width = 760;
-  const height = 320;
-  const padding = { top: 24, right: 30, bottom: 44, left: 60 };
+  const width = 960;
+  const height = 340;
+  const padding = { top: 24, right: 36, bottom: 48, left: 64 };
 
   const chartWidth = width - padding.left - padding.right;
   const chartHeight = height - padding.top - padding.bottom;

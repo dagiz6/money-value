@@ -3,7 +3,7 @@ import React from 'react';
 export function Header() {
   return (
     <header className="border-b border-emerald-900/40 bg-[#061513]/80 backdrop-blur-md sticky top-0 z-30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo and Brand */}
         <a href="#" className="flex items-center gap-3 group">
           {/* Glowing Sphere Logo from screenshot */}

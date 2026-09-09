@@ -190,17 +190,8 @@ export function InflationCalculator() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 self-start sm:self-center">
-            <div className="px-3 py-1 rounded-full text-xs font-medium bg-[#061917] text-emerald-300 border border-emerald-700/40 tabular-nums">
-              {currency}: {minYear} – {maxYear}
-            </div>
-            <div
-              className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-950/60 text-emerald-400 border border-emerald-800/50 flex items-center gap-1.5 shadow-sm"
-              title="Protected with Arcjet Rate Limiting (3 req/min) & WAF Shield"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              Arcjet Protected (3 req/min)
-            </div>
+          <div className="self-start sm:self-center px-3 py-1 rounded-full text-xs font-medium bg-[#061917] text-emerald-300 border border-emerald-700/40 tabular-nums">
+            {currency}: {minYear} – {maxYear}
           </div>
         </div>
 

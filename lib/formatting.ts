@@ -21,7 +21,7 @@ export function formatCurrency(
     return `0 ${currency}`;
   }
 
-  // Determine standard fraction digits: show decimals if amount has fractional cents
+  //  show decimals if amount has fractional cents
   const hasDecimals = amount % 1 !== 0;
   const minDigits = options?.minimumFractionDigits ?? (hasDecimals ? 2 : 0);
   const maxDigits = options?.maximumFractionDigits ?? 2;
